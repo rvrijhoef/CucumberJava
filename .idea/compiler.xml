@@ -11,8 +11,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bibliotheek" target="9" />
-      <module name="cucumber" target="1.8" />
       <module name="Cucumbertest" target="1.8" />
     </bytecodeTargetLevel>
   </component>
