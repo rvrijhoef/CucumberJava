@@ -77,10 +77,11 @@ public class KlantSteps extends TestContext {
 
     @En("heeft de klant {bigdecimal} boete openstaan")
     public void heeftDeKlantBoeteOpenstaan(final BigDecimal boete) {
+        BigDecimal actueleBoete = library.getKlant(customerId).getBoete();
         try{
-            assertEquals(library.getKlant(customerId).getBoete().compareTo(boete),0);
+            assertEquals(actueleBoete.compareTo(boete),0);
         } catch (AssertionError e){
-            System.out.println("Verwahte waarde is: " + boete + ", werkelijke waarde is: " + library.getKlant(customerId).getBoete());
+            System.out.println("Verwachte waarde is: " + boete + ", werkelijke waarde is: " + actueleBoete );
             throw e;
         }
     }
