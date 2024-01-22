@@ -23,8 +23,7 @@ public class UitleenSteps extends TestContext {
         assertEquals(verwachteAantalExemplaren, geleendBoek.getAantalBeschikbaar());
     }
 
-    @En("heeft de klant {int} boek in bezit")
-    @En("heeft de klant {int} boeken in bezit")
+    @En("heeft de klant {int} boek(en) in bezit")
     public void heeftDeKlantErInBezit(int verwachteAantalInBezit){
         assertEquals("Het verwachte aantal boeken komt niet overeen met het daadwerkelijke aantal",
                 verwachteAantalInBezit,library.getUitgeleendeBoeken(customerId).size());
