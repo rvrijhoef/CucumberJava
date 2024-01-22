@@ -19,3 +19,14 @@ Functionaliteit: Test aanmaken klant van de bibliotheek
       | Naam       | Geboortedatum | Adres              | TotaalKlanten | Exceptie       | Bericht          |
       | Pietje Puk | 1980-10-04    | Testweg 10, ergens | 1             | geen           | geen             |
       | Pietje Puk | gisteren      | Testweg 2, ergens  | 0             | KlantException | Klant is te jong |
+
+  Abstract Scenario: ISBN controle
+    Als de volgende boeken worden toegevoegd aan de bibliotheek
+      | titel       | auteur     | genre | prijs | datum      | omschrijving              | isbn   | aantal |
+      | test boek 1 | Tinus Test | onzin | 45.35 | 2020-02-01 | een boek over testen enzo | <isbn> | 50     |
+    Dan is de volgende exception gegeven: <exception> met de inhoud "<inhoud>"
+
+    Voorbeelden:
+      | isbn          | exception     | inhoud                      |
+      | 9784333443437 | geen          | geen                        |
+      | 9784333443435 | BoekException | Geen geldig isbn opgegeven. |
