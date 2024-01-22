@@ -5,7 +5,7 @@ import io.cucumber.java.nl.En;
 import io.cucumber.java.nl.Gegeven;
 import library.Library;
 
-public class SharedSteps extends TestContext {
+public class LibrarySteps extends TestContext {
     @Gegeven("een bibliotheek zonder klanten")
     public void eenBibliotheekZonderKlanten() {
         library = new Library();

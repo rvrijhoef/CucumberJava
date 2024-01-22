@@ -1,8 +1,6 @@
 package StepDefs;
 
 import Utils.TestContext;
-import exceptions.BoekException;
-import exceptions.KlantException;
 import io.cucumber.java.nl.Als;
 import io.cucumber.java.nl.Dan;
 import io.cucumber.java.nl.En;
@@ -11,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 
 public class UitleenSteps extends TestContext {
     @Als("ik het boek met titel {string} uitleen")
-    public void ikHetBoekMetTitelUitleen(final String titel) throws KlantException, KlantException, KlantException, KlantException, BoekException {
+    public void ikHetBoekMetTitelUitleen(final String titel) {
         int boekId = library.getboekId(titel);
         try {
             geleendBoek = library.leenBoek(boekId, customerId);
@@ -25,7 +23,8 @@ public class UitleenSteps extends TestContext {
         assertEquals(verwachteAantalExemplaren, geleendBoek.getAantalBeschikbaar());
     }
 
-    @En("heeft de klant er {int} in bezit")
+    @En("heeft de klant {int} boek in bezit")
+    @En("heeft de klant {int} boeken in bezit")
     public void heeftDeKlantErInBezit(int verwachteAantalInBezit){
         assertEquals("Het verwachte aantal boeken komt niet overeen met het daadwerkelijke aantal",
                 verwachteAantalInBezit,library.getUitgeleendeBoeken(customerId).size());
