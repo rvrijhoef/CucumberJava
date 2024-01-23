@@ -3,12 +3,14 @@ package StepDefs;
 import Utils.TestContext;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.nl.Als;
-import io.cucumber.java.nl.En;
+import io.cucumber.java.nl.Dan;
 import objects.Boek;
 import util.Utils;
 
 import java.math.BigDecimal;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class BoekSteps extends TestContext {
     @Als("het boek met titel {string} en auteur {string} en genre {string} en prijs {bigdecimal} en datum {string} en omschrijving {string} en isbn {string} en aantal {int}")
@@ -39,8 +41,9 @@ public class BoekSteps extends TestContext {
         }
     }
 
-    @En("zijn er van het boek met titel {string} nog {int} beschikbaar")
+    @Dan("zijn/is er van het boek met titel {string} nog {int} beschikbaar")
     public void zijnErVanHetBoekMetTitelNogBeschikbaar(final String titel, final int aantalBeschikbaar) {
-        int aantal = library.getaantalBeschikbareBoeken(titel);
+        assertEquals("Het verwachte aantal beschikbare boeken komt niet overeen met het daadwerkelijke aantal",
+                aantalBeschikbaar,library.getaantalBeschikbareBoeken(titel));
     }
 }

@@ -56,3 +56,4 @@ Functionaliteit: Test aanmaken klant van de bibliotheek
     Dan heeft de klant 0,00 boete openstaan
     En ik het boek met titel "Splish Splash" uitleen
     Dan heeft de klant 1 boek in bezit
+    En is er van het boek met titel "Splish Splash" nog 1 beschikbaar
