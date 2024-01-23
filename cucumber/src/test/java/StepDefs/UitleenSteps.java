@@ -8,6 +8,11 @@ import io.cucumber.java.nl.En;
 import static org.junit.Assert.assertEquals;
 
 public class UitleenSteps extends TestContext {
+    TestContext testContext;
+    public UitleenSteps(TestContext context) {
+        this.testContext = context;
+    }
+
     @Als("ik het boek met titel {string} uitleen")
     public void ikHetBoekMetTitelUitleen(final String titel) {
         int boekId = library.getboekId(titel);
