@@ -14,6 +14,8 @@ public class TestContext {
         this.scenarioContext = new ScenarioContext();
     }
 
+    protected void verwijderVorigeException(){vorigeException=null;}
+
     protected void setVorigeException(Exception e){
         System.out.println("De volgende exceptie is opgetreden: " + e.getMessage());
         vorigeException = e;
