@@ -18,8 +18,10 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class XmlReader {
+    private static final Logger logger = Logger.getLogger(XmlReader.class.getName());
 
     public List<Boek> loadBooks() {
         List<Boek> boeken = new ArrayList<>();
@@ -31,7 +33,7 @@ public class XmlReader {
             Document doc = dBuilder.parse(xml);
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            logger.fine("Root element :" + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getElementsByTagName("book");
 
@@ -44,7 +46,7 @@ public class XmlReader {
 
                 Node nNode = nList.item(temp);
 
-                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+                logger.fine("\nCurrent Element :" + nNode.getNodeName());
 
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
@@ -115,7 +117,7 @@ public class XmlReader {
             Document doc = dBuilder.parse(xml);
             doc.getDocumentElement().normalize();
 
-            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            logger.fine("Root element :" + doc.getDocumentElement().getNodeName());
 
             NodeList nList = doc.getElementsByTagName("book");
 
@@ -123,7 +125,7 @@ public class XmlReader {
 
                 Node nNode = nList.item(temp);
 
-                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+                logger.fine("\nCurrent Element :" + nNode.getNodeName());
 
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 

@@ -6,6 +6,11 @@ import io.cucumber.java.nl.Gegeven;
 import library.Library;
 
 public class LibrarySteps extends TestContext {
+    TestContext testContext;
+    public LibrarySteps(TestContext context) {
+        this.testContext = context;
+    }
+
     @Gegeven("een bibliotheek zonder klanten")
     public void eenBibliotheekZonderKlanten() {
         library = new Library();
