@@ -14,6 +14,7 @@ public class LibrarySteps extends TestContext {
     @Gegeven("een bibliotheek zonder klanten")
     public void eenBibliotheekZonderKlanten() {
         library = new Library();
+        verwijderVorigeException();
     }
 
     @En("er {int} dagen zijn verstreken")
