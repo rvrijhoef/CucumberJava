@@ -13,6 +13,11 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class BoekSteps extends TestContext {
+    TestContext testContext;
+    public BoekSteps(TestContext context) {
+       this.testContext = context;
+    }
+
     @Als("het boek met titel {string} en auteur {string} en genre {string} en prijs {bigdecimal} en datum {string} en omschrijving {string} en isbn {string} en aantal {int}")
     public void hetBoekMetTitelEnAuteurEnGenreEnPrijsEnDatumEnOmschrijvingEnIsbnEnAantal(
             String titel, String auteur, String genre, BigDecimal prijs, String datum, String omschrijving, String isbn, int aantal) throws Exception {
