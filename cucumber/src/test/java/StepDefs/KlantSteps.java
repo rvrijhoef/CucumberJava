@@ -14,6 +14,10 @@ import java.math.BigDecimal;
 import static org.junit.Assert.*;
 
 public class KlantSteps extends TestContext {
+    TestContext testContext;
+    public KlantSteps(TestContext context) {
+        this.testContext = context;
+    }
 
     @Als("ik een standaard klant toevoeg")
     public void ikEenStandaardKlantToevoeg() throws Exception {
